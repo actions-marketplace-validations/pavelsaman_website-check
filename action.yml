@@ -1,0 +1,30 @@
+name: Check status code
+description: Checks status code of a website
+branding:
+  icon: activity
+  color: green
+
+inputs:
+  url:
+    description: Website URL
+    required: true
+  status_code:
+    description: Expected status code
+    required: false
+    default: "200"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Print starting info
+      shell: bash
+      run: echo "Check ${{ inputs.url }} for status code ${{ inputs.status_code }}"
+    - name: Set execution bit
+      shell: bash
+      run: chmod u+x ${{ github.action_path }}/website-check.bash
+    - name: Check website status code
+      shell: bash
+      run: ${{ github.action_path }}/website-check.bash ${{ inputs.url }} ${{ inputs.status_code }}
+    - name: Print finish info
+      shell: bash
+      run: echo "Check finished."
