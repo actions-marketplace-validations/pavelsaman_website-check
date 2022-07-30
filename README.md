@@ -4,7 +4,7 @@ GitHub Action that checks a website for a status code.
 
 ## Example usage
 
-```
+```yaml
 steps:
   - name: Check site for status code
     uses: pavelsaman/website-check@v2
