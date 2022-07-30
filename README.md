@@ -14,3 +14,7 @@ steps:
 ```
 
 `status_code` parameter is optional, it will default to `200` if not set.
+
+---
+
+[![Check Markdown](https://github.com/pavelsaman/website-check/actions/workflows/check-markdown.yml/badge.svg)](https://github.com/pavelsaman/website-check/actions/workflows/check-markdown.yml)
