@@ -1,5 +1,6 @@
 name: Check status code
 description: Checks status code of a website
+author: 'Pavel Saman'
 branding:
   icon: activity
   color: green
