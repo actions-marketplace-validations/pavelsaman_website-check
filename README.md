@@ -7,10 +7,11 @@ GitHub Action that checks a website for a status code.
 ```yaml
 steps:
   - name: Check site for status code
-    uses: pavelsaman/website-check@v2
+    uses: pavelsaman/website-check@v2.2.0
     with:
       url: https://startpage.com/
       status_code: 200
+      redirect: true
 ```
 
 `status_code` parameter is optional, it will default to `200` if not set.

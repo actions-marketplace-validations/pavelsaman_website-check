@@ -12,10 +12,14 @@ inputs:
   status_code:
     description: Expected status code
     required: false
-    default: "200"
+    default: '200'
+  redirect:
+    description: Redirect on 3xx and return the last status code
+    required: false
+    default: 'false'
 
 runs:
-  using: "composite"
+  using: 'composite'
   steps:
     - name: Print starting info
       shell: bash
@@ -25,7 +29,7 @@ runs:
       run: chmod u+x ${{ github.action_path }}/website-check.bash
     - name: Check website status code
       shell: bash
-      run: ${{ github.action_path }}/website-check.bash ${{ inputs.url }} ${{ inputs.status_code }}
+      run: ${{ github.action_path }}/website-check.bash ${{ inputs.url }} ${{ inputs.status_code }} ${{ inputs.redirect }}
     - name: Print finish info
       shell: bash
       run: echo "Check finished."
