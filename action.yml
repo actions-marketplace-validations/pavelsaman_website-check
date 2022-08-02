@@ -23,7 +23,7 @@ runs:
   steps:
     - name: Print starting info
       shell: bash
-      run: echo "Check ${{ inputs.url }} for status code ${{ inputs.status_code }}"
+      run: echo "::warning::Check ${{ inputs.url }} for status code ${{ inputs.status_code }}"
     - name: Set execution bit
       shell: bash
       run: chmod u+x ${{ github.action_path }}/website-check.bash
@@ -32,4 +32,4 @@ runs:
       run: ${{ github.action_path }}/website-check.bash ${{ inputs.url }} ${{ inputs.status_code }} ${{ inputs.redirect }}
     - name: Print finish info
       shell: bash
-      run: echo "Check finished."
+      run: echo "::warning::Check finished."
